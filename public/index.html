@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Game</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+
+    <div class="images">
+        <img src="images/player.png" alt="Player" id='player'>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div></div>
+    <input type="text" id='username' placeholder="username">
+    <script type="text/javascript" src="sound.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+    <script type="text/javascript" src="draw.js"></script>
+    <script type="text/javascript" src="vector.js"></script>
+    <script type="text/javascript" src="pellet.js"></script>
+    <script type="text/javascript" src="blob.js"></script>
+    <script type="text/javascript" src="player.js"></script>
+    <script type="text/javascript" src="pelletUpdate.js"></script>
+    <script type="text/javascript" src="spawnBlob.js"></script>
+    <script type="text/javascript" src="powerups.js"></script>
+    <script type="text/javascript" src="animate.js"></script>
+    <button class="fullscreen" id="fullscreen" type="button" name="button">Fullscreen</button>
+
+    <script>
+        const elem = document.documentElement;
+        let full = false;
+
+        function toggleFullscreen() {
+            if (elem.requestFullscreen && !full) {
+                elem.requestFullscreen();
+                full = true;
+            } else if (document.exitFullscreen && full) {
+                document.exitFullscreen();
+                full = false;
+            }
+        }
+        let button = document.getElementById('fullscreen');
+        button.addEventListener('click', () => {
+            toggleFullscreen()
+        });
+    </script>
+
+
+</body>
+
+</html>
